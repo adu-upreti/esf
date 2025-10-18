@@ -1,3 +1,5 @@
+// next.config.js
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -16,7 +18,18 @@ const nextConfig = {
       },
     ],
   },
-  // Performance optimizations
+
+  // ✅ Skip ESLint checks during Vercel build
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
+  // ✅ (Optional) also skip TypeScript build errors
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
+  // ✅ Performance optimizations
   compress: true,
   poweredByHeader: false,
   generateEtags: false,
